@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Accueil Voyage Voyage{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+        {% block stylesheets %}
+        {% endblock %}
+<script src="{{ asset('bootstrap/dist/js/bootstrap.bundle.js') }}"></script>
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+      <header>    
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+
+      <div class="container-fluid ">
+        
+        <img class="logo mx-4" src="{{ asset('images/logo.png') }}" alt="logo">
+        <h1><div class="titre">Voyage Voyage</div></h1>
+        
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Accueil</a>
+          </li>
+          
+           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Montagne</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Campagne</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ville</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">Inscription/Connexion</a>
+        </li>
+        </ul>
+          
+        
+        </div>
+      </div>
+    </nav>
+</header>
+
+        {% block body %}
+        {% endblock %}
+        {% block footer %}
+        <footer> 
+              <!-- 
+section footer
+Pages obligatoires: CGU/CGV, les mentions legales,politique de confidentilite -->
+  <footer class="container-fluid py-5 mt-auto bg-light h-50 ">    
+    <div class="row">
+      <div class="col-12 d-flex text-primary justify-content-center">
+          <a href="#" title="CGV">Nos Conditions générales des ventes</a>
+          <a href="#" class="mx-2" title="Mentions légales">Mentions légales</a>
+          <a href="#" class="me-2" title="Politique de confidentialité">Politiques de confidentialités</a>
+          <a href="#" class="">Nous contacter</a>     
+      </div>
+         <div class="col d-flex text-primary justify-content-center text-secondary py-5">Voyage Voyage 2021 tous droits reservés</div>
+
+         </div>
+    </div>
+    
+  </footer>
+    </body>
+</html>
+{% endblock %}
