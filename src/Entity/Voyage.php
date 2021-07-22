@@ -62,6 +62,7 @@ class Voyage
      */
     private $documentation;
 
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +172,30 @@ class Voyage
     public function setDocumentation(string $documentation): self
     {
         $this->documentation = $documentation;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(?Category $Category): self
+    {
+        $this->Category = $Category;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Category
+    {
+        return $this->Categorie;
+    }
+
+    public function setCategorie(?Category $Categorie): self
+    {
+        $this->Categorie = $Categorie;
 
         return $this;
     }
