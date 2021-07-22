@@ -15,4 +15,11 @@ class ContentController extends AbstractController
             'controller_name' => 'ContentController',
         ]);
     }
+    #[Route('/', name: 'home')]
+    public function home(): Response
+    {
+        return $this->render('content/home.html.twig', [
+            'controller_name' => 'ContentController',
+        ]);
+    }
 }

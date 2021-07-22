@@ -1,15 +1,10 @@
 /* polices utilisees */
-@font-face {
-  font-family: "Parisienne-Regular";
-  src: url("font/Parisienne/Parisienne-Regular.ttf");
-}
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 /* header et nav */
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -20,22 +15,6 @@
 }
 /* Fin  header et nav */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-/*carousel 3 images*/
-.textCarousel {
-  color: #ffc107;
-  font-family: Roboto;
-}
-
-/* fin carousel 3 images*/
-
-.icone {
-  height: 80px;
-  width: 80x;
-}
-
-.card-text {
-  height: 150px;
-}
 
 /* Page connexion */
 
@@ -117,29 +96,3 @@ form button {
 }
 /* fin page connexion*/
 
-/* formulaire twig sav*/
-.savform {
-  background-color: #eb7371 !important;
-}
-
-.register {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5f5;
-  font-family: "Roboto", sans-serif;
-  padding-bottom: 50%;
-}
-
-/*essai design detail symfony*/
-
-.textdetail h3 {
-  color: #ffc107;
-}
-.textdetail li {
-  color: #ff2c07;
-  font-size: 3em;
-}
