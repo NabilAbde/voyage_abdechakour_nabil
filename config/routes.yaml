@@ -13,3 +13,9 @@ app_voyage:
   controller: App\Controller\VoyageController::index
   defaults:
     title: "Les voyages"
+
+app_user:
+  path: /admin/user/{title}
+  controller: App\Controller\UserController::index
+  defaults:
+    title: "Users"
