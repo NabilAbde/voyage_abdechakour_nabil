@@ -30,20 +30,16 @@ class Category
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=Voyage::class, mappedBy="Category", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Voyage::class, mappedBy="categorie", orphanRemoval=true)
      */
     private $voyages;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Voyage::class, mappedBy="Categorie", orphanRemoval=true)
-     */
-    private $voyage;
 
     public function __construct()
     {
         $this->voyages = new ArrayCollection();
-        $this->voyage = new ArrayCollection();
     }
+
+   
 
     public function getId(): ?int
     {
@@ -86,7 +82,7 @@ class Category
     {
         if (!$this->voyages->contains($voyage)) {
             $this->voyages[] = $voyage;
-            $voyage->setCategory($this);
+            $voyage->setCategorie($this);
         }
 
         return $this;
@@ -96,19 +92,13 @@ class Category
     {
         if ($this->voyages->removeElement($voyage)) {
             // set the owning side to null (unless already changed)
-            if ($voyage->getCategory() === $this) {
-                $voyage->setCategory(null);
+            if ($voyage->getCategorie() === $this) {
+                $voyage->setCategorie(null);
             }
         }
 
         return $this;
     }
 
-    /**
-     * @return Collection|Voyage[]
-     */
-    public function getVoyage(): Collection
-    {
-        return $this->voyage;
-    }
+    
 }

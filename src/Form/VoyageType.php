@@ -3,7 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Voyage;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,6 +17,14 @@ class VoyageType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('categorie',
+                EntityType::class,
+                array(
+                    'class' => Category::class,
+                    'choice_label' => 'name',
+                    'multiple' => false,)
+
+                )
             ->add('accroche')
             ->add('description')
             ->add('priceperperson')
@@ -20,9 +32,9 @@ class VoyageType extends AbstractType
             ->add('image1')
             ->add('image2')
             ->add('image3')
-            ->add('documentation')
-        ;
-    }
+            ->add('documentation');
+       
+    } 
 
     public function configureOptions(OptionsResolver $resolver)
     {

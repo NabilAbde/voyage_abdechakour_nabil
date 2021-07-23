@@ -62,6 +62,12 @@ class Voyage
      */
     private $documentation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="voyages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
+
    
     public function getId(): ?int
     {
@@ -176,27 +182,17 @@ class Voyage
         return $this;
     }
 
-    public function getCategory(): ?Category
-    {
-        return $this->Category;
-    }
-
-    public function setCategory(?Category $Category): self
-    {
-        $this->Category = $Category;
-
-        return $this;
-    }
-
     public function getCategorie(): ?Category
     {
-        return $this->Categorie;
+        return $this->categorie;
     }
 
-    public function setCategorie(?Category $Categorie): self
+    public function setCategorie(?Category $categorie): self
     {
-        $this->Categorie = $Categorie;
+        $this->categorie = $categorie;
 
         return $this;
     }
+
+    
 }
