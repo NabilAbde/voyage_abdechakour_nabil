@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Catégorie</th>
                 <th>Name</th>
                 <th>Accroche</th>
                 <th>Description</th>
@@ -25,6 +26,7 @@
         {% for voyage in voyages %}
             <tr>
                 <td>{{ voyage.id }}</td>
+                <td>{{ voyage.categorie.name }}</td>
                 <td>{{ voyage.name }}</td>
                 <td>{{ voyage.accroche }}</td>
                 <td>{{ voyage.description }}</td>
@@ -37,6 +39,7 @@
                 <td>
                     <a href="{{ path('voyage_show', {'id': voyage.id}) }}">show</a>
                     <a href="{{ path('voyage_edit', {'id': voyage.id}) }}">edit</a>
+                    <a href="{{ path('voyage_delete', {'id': voyage.id}) }}">delete</a>
                 </td>
             </tr>
         {% else %}
