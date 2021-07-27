@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Voyage;
+use App\Entity\Tag;
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -22,9 +23,11 @@ class VoyageType extends AbstractType
                 array(
                     'class' => Category::class,
                     'choice_label' => 'name',
-                    'multiple' => false,)
-
-                )
+                    'multiple' => false,))
+             ->add('tag',EntityType::class,[
+                    'class' => Tag::class,
+                    'choice_label' => 'name',
+                    'multiple' => true,])
             ->add('accroche')
             ->add('description')
             ->add('priceperperson')

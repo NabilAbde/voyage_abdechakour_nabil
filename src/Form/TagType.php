@@ -6,6 +6,7 @@ use App\Entity\Tag;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class TagType extends AbstractType
 {
@@ -13,9 +14,17 @@ class TagType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('voyages')
-        ;
-    }
+           
+            /*->add('voyages',
+            EntityType::class,
+        array(
+            'class' =>Tag::class,
+            'choice_label' => 'name',
+            'multiple' => false,
+
+        ));*/
+        
+    ;}
 
     public function configureOptions(OptionsResolver $resolver)
     {
